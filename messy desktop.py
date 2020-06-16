@@ -15,7 +15,7 @@ PNG
 xlsx excell file 
 HTML 
 
-________mass names__________
+________mess names__________
 photo (number)
 stuff
 thing
