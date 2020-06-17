@@ -60,7 +60,6 @@ for j in range(number_of_files_created):
         if file_type==1:
             #____________folder 1_______________#creating a folder
             folder_name=messy_file_name
-            path=folder_name
             
             folder_path=desktop_path+folder_name
             path=folder_path
