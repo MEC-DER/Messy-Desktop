@@ -2,7 +2,7 @@
 """
 Created on Mon Jun 15 10:10:27 2020
 
-@author: james
+@author: MEC DER
 """
 """
 _______mess types______
@@ -17,28 +17,30 @@ HTML
 
 ________mess names__________
 photo (number)
-stuff
-thing
-IMG
-untitled
-name
-random letters
+stuff (number)
+thing (number)
+IMG (number)
+untitled (number)
+name (number)
 part (number)
-dated(random date)
 
 """
+# This section is where the external libraries are imported these need to be installed
+#before the programm will full run use python pip install. 
 from reportlab.pdfgen import canvas
-import random
-import os
-from PIL import Image, ImageDraw
-import openpyxl as xl # as xl canges the call term from openpyxl to xl this makes it easier to type
+import random #for randomly generated numbers
+import os #for working with folders and file paths.
+from PIL import Image, ImageDraw #for image creation and manipulation.
+import openpyxl as xl # this is usefull for working with excell files. for more advanced excell work, pandas, is realy good.
+# as xl changes the call term from openpyxl to xl this makes it easier to type.
 
-user_name=os.getlogin() #getting the user name
-desktop_path=file_path="C:\\Users\\"+user_name+"\\Desktop\\"
+user_name=os.getlogin() #getting the user name this is used to alow acsess to write to the desktop.
+desktop_path=file_path="C:\\Users\\"+user_name+"\\Desktop\\" # use double back slashes for the file path as a back slash is an escape character.
 
-record_of_created_paths=[]#will record the file pathe to undo the programm must only be recorded for deletion if created.
+record_of_created_paths=[] #will record the file path to undo the programm, must only be recorded to be if created.
 
-messy_name_bases=["photo","stuff","thing","IMG","untitled","name","part","date"]
+messy_name_bases=["photo","stuff","thing",
+                  "IMG","untitled","name","part","date"]
 number_of_files_created=100
 for j in range(number_of_files_created):
     #randomly selecting the messy file name base
@@ -56,7 +58,7 @@ for j in range(number_of_files_created):
     
     path=""#the file path is cleared each itteration to prevent any strange errors
     
-    try:  #exception catching if the program fails with n error it will move to the except part and exicute that instead.
+    try:  #exception catching if the program fails with n error it will move to the except part and execute that instead.
         if file_type==1:
             #____________folder 1_______________#creating a folder
             folder_name=messy_file_name
